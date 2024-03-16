@@ -21,5 +21,8 @@ jobs:
         run: npm install  # หรือคำสั่งที่ใช้ในการติดตั้ง dependencies ของคุณ
 
       - name: Build
-        run: npm run deploy  # หรือคำสั่งที่ใช้ในการ build โปรเจคของคุณ
+        run: npm run build  # หรือคำสั่งที่ใช้ในการ build โปรเจคของคุณ
+
+      - name: gh-pages
+        run: gh-pages -d dist  # หรือคำสั่งที่ใช้ในการ build โปรเจคของคุณ
 
