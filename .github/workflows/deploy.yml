@@ -26,6 +26,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}  # ใช้ PAT ที่เพิ่งสร้างขึ้น
+          token: ${{ secrets.DEPLOY_TOKEN }}  # ใช้ PAT ที่เพิ่งสร้างขึ้น
           branch: gh-pages  # Branch ที่คุณต้องการ deploy
           folder: dist  # โฟลเดอร์ที่คุณต้องการ deploy
