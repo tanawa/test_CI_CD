@@ -8,9 +8,13 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  base: '/test_CI_CD/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server: {
+    port: 3000,
   }
 })

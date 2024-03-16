@@ -1,0 +1,25 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # แก้ชื่อ branch ตามที่คุณใช้
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # เลือกเวอร์ชัน Node.js ที่คุณต้องการใช้
+
+      - name: Install Dependencies
+        run: npm install  # หรือคำสั่งที่ใช้ในการติดตั้ง dependencies ของคุณ
+
+      - name: Build
+        run: npm run deploy  # หรือคำสั่งที่ใช้ในการ build โปรเจคของคุณ
+
