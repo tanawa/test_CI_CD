@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # แก้ชื่อ branch ตามที่คุณใช้
+      - main
 
 jobs:
   deploy:
@@ -15,14 +15,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # เลือกเวอร์ชัน Node.js ที่คุณต้องการใช้
+          node-version: '16'
 
       - name: Install Dependencies
-        run: npm install  # หรือคำสั่งที่ใช้ในการติดตั้ง dependencies ของคุณ
+        run: npm install
 
       - name: Build
-        run: npm run build  # หรือคำสั่งที่ใช้ในการ build โปรเจคของคุณ
+        run: npm run build
 
-      - name: gh-pages
-        run: gh-pages -d dist  # หรือคำสั่งที่ใช้ในการ build โปรเจคของคุณ
-
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # Branch ที่คุณต้องการ deploy
+          folder: dist  # โฟลเดอร์ที่คุณต้องการ deploy
