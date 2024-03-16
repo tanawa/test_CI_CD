@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # เลือกเวอร์ชัน Node.js ที่คุณต้องการใช้
+          node-version: '16'  # เลือกเวอร์ชัน Node.js ที่คุณต้องการใช้
 
       - name: Install Dependencies
         run: npm install  # หรือคำสั่งที่ใช้ในการติดตั้ง dependencies ของคุณ
